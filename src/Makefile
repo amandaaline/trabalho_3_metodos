@@ -28,7 +28,7 @@ $(ODIR)/%.o: %.cpp $(HEADERS)
 $(PROGRAM): $(OBJECTS)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
-$(TEST_EXE) : $(TESTS) teste_leitor.cpp
+$(TEST_EXE) : $(TESTS)
 	$(CC) -o $@ --coverage $^ $(CFLAGS)
 
 program: $(PROGRAM) test gcov project
