@@ -1,11 +1,12 @@
-#include <iostream>
+#include "../src/leitor_arquivo.cpp"
+#include <fstream>
 #include <gtest/gtest.h>
-#include "leitor_arquivo.hpp"
+
+using namespace std;
 
 TEST(verifica_funcionamento_arquivo, leitura)
 {
     fstream arquivoProg;
-    
     string testando = "first_program.cpp";
     EXPECT_EQ(0, verificaArquivo(&arquivoProg,testando));
     EXPECT_EQ(1, arquivoProg.is_open());
@@ -13,9 +14,8 @@ TEST(verifica_funcionamento_arquivo, leitura)
 
 TEST(lerLinhas, contadorLinha)
 {
-    fstream arquivoProg;
     int posLinha = 0;
-
+	fstream arquivoProg;
     string testando = "first_program.cpp";
     EXPECT_EQ(-1, verificaLinhas(&arquivoProg, posLinha));
     EXPECT_EQ(0, verificaArquivo(&arquivoProg, testando));
@@ -34,9 +34,8 @@ TEST(lerLinhas, contadorLinha)
     EXPECT_NE(-1,contagemBrancoComentario(&arquivoProg,posLinha));
 }
 
- int main(int argc, char const *argv[])
+ int main(int argc, char **argv)
 {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-    
-} 
+        ::testing::InitGoogleTest(&argc, argv);
+        return RUN_ALL_TESTS();
+}

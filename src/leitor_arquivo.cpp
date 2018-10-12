@@ -1,4 +1,5 @@
 #include <iostream>
+#include <boost/algorithm/string.hpp>
 #include "leitor_arquivo.hpp"
 
 using namespace std;

@@ -1,5 +1,5 @@
 IDIR = ../include
-CC= g++ 
+CC= g++ -std=c++11
 CFLAGS=-I$(IDIR) -ftest-coverage -fprofile-arcs -lgtest -lgtest_main -fpermissive
 PROGRAM_GCOV = leitor
 ODIR=../obj
